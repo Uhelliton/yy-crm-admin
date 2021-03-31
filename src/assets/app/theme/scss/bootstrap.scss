@@ -1,0 +1,26 @@
+/*
+  Template Name: CRM Theme
+  Author: Uhelliton Andrade
+  Version: 1.0.0
+  Contact: uhelliton@uol.com.br
+  File: Custom Bootstrap Css File
+*/
+
+//Core files
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+@import "global/components/reboot";
+@import "global/components/backgrounds";
+@import "global/components/badge";
+@import "global/components/buttons";
+@import "global/components/breadcrumb";
+@import "global/components/card";
+@import "global/components/dropdown";
+@import "global/components/nav";
+@import "global/components/table";
+@import "global/components/pagination";
+@import "global/components/progress";
+@import "global/components/forms";
+@import "global/components/accordions";

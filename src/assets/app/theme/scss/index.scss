@@ -1,0 +1,81 @@
+/*
+Template Name: CRM Theme
+Author: Uhelliton Andrade
+Version: 1.0.0
+Contact: uhelliton@uol.com.br
+File: Main Css File
+*/
+
+//Fonts
+@import "global/fonts/fonts";
+
+//Core files
+@import "../../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../../node_modules/bootstrap/scss/variables";
+@import "variables";
+@import "../../../../../node_modules/bootstrap/scss/mixins";
+@import '../../../../../node_modules/bootstrap/scss/bootstrap';
+@import 'bootstrap';
+@import '../../../../../node_modules/bootstrap-vue/src/index';
+
+
+// Structure
+@import "global/structure/general";
+@import "global/structure/topbar";
+@import "global/structure/page-head";
+@import "global/structure/footer";
+@import "global/structure/right-sidebar";
+@import "global/structure/vertical";
+@import "global/structure/horizontal-nav";
+@import "global/structure/layouts";
+
+// Components
+@import "global/components/avatar";
+@import "global/components/helper";
+@import "global/components/preloader";
+@import "global/components/widgets";
+@import "global/components/demos";
+@import "global/components/print";
+
+//Pages
+@import "global/pages/authentication";
+@import "global/pages/ecommerce";
+@import "global/pages/email";
+@import "global/pages/projects";
+@import "global/pages/contacts";
+@import "global/pages/timeline";
+@import "global/pages/extras-pages";
+@import "global/pages/chat";
+@import "global/pages/crypto";
+@import "global/pages/coming-soon";
+
+// Plugins
+@import "global/plugins/custom-scrollbar";
+@import "custom/ant-form";
+// @import "global/plugins/calendar";
+// @import "global/plugins/dragula";
+// @import "global/plugins/range-slider";
+// @import "global/plugins/sweatalert2";
+// @import "global/plugins/select2";
+// @import "global/plugins/taskboard";
+// @import "global/plugins/datepicker";
+// @import "global/plugins/form-editors";
+// @import "global/plugins/form-upload";
+// @import "global/plugins/form-wizard";
+// @import "global/plugins/apexcharts";
+// @import "global/plugins/chartist";
+// @import "global/plugins/google-map";
+// @import "global/plugins/switcher";
+// @import "global/plugins/carousel";
+
+@import "icons";
+
+// @import "global/rtl/bootstrap-rtl";
+// @import "global/rtl/components-rtl";
+// @import "global/rtl/float-rtl";
+// @import "global/rtl/general-rtl";
+// @import "global/rtl/pages-rtl";
+// @import "global/rtl/plugins-rtl";
+// @import "global/rtl/spacing-rtl";
+// @import "global/rtl/structure-rtl";
+// @import "global/rtl/text-rtl";
