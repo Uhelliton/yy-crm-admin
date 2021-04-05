@@ -1,3 +1,4 @@
+@import "header";
 
 label {
   display: inline-block;
@@ -104,3 +105,10 @@ background-color: #FFF4DE;
         background-color: #3d3b56!important;
   }
 }
+
+
+// disable material icons
+.material-icons {
+  display: none;
+}
+

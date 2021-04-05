@@ -17,8 +17,15 @@ export default class AppDialog extends Vue {
   <q-dialog
     v-model="dialogRef"
     persistent
-    transition-show="scale">
-    <q-card style="width: 860px; max-width: 80vw;" >
+    transition-show="scale"
+    v-bind="{ ...$attrs }"
+    v-on="$listeners">
+
+    <slot v-for="slot in Object.keys($slots)"
+          :name="slot"
+          :slot="slot" />
+
+    <q-card style="width: 460px; max-width: 80vw;" >
       <q-card-section class="bg-primary text-white">
         <div class="text-h6">{{ title }}</div>
         <Icon icon="x"

@@ -65,6 +65,9 @@ module.exports = function (ctx) {
         'QCardSection',
         'QForm',
         'QBtn',
+        'QCarousel',
+        'QCarouselControl',
+        'QCarouselSlide',
       ],
       directives: [],
 

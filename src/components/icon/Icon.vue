@@ -9,5 +9,6 @@ export default class AppIcon extends Vue {
 </script>
 
 <template>
-  <i :class="'bx bx-' + icon"></i>
+  <i v-if="icon.includes('flaticon')" :class="icon"></i>
+  <i v-else :class="'bx bx-' + icon"></i>
 </template>

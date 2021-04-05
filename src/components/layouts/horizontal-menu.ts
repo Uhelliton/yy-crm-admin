@@ -12,17 +12,17 @@ export const menuItems = [
     subItems: [
       {
         label: 'Campanhas',
-        link: '/',
+        route: 'campaign.index',
         permission: ''
       },
       {
         label: 'Automações',
-        link: '/',
+        route: 'campaign.index',
         permission: ''
       },
       {
         label: 'Filtros',
-        link: '/',
+        route: 'campaign.index',
         permission: ''
       },
     ]

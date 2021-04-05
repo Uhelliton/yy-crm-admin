@@ -13,7 +13,7 @@ import PageHeader from './PageHeader'
     PageHeader
   }
 })
-export default class App extends Vue {
+export default class Admin extends Vue {
   created () {
     document.body.setAttribute('data-layout', 'horizontal')
     document.body.setAttribute('data-topbar', 'light')

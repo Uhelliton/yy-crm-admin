@@ -1,2 +1,2 @@
-import { find, filter, map, isEmpty } from 'lodash'
-export { find, filter, map, isEmpty }
+import { find, filter, map, forEach, remove, isEmpty } from 'lodash'
+export { find, filter, map, forEach, remove, isEmpty }

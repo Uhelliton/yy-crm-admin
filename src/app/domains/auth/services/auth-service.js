@@ -1,6 +1,6 @@
-import ApiRequestService from 'src/app/support/services/api-request-service'
+// import ApiRequestService from 'src/app/support/services/api-request-service'
 
-const endpoint = '/auth/login'
+// const endpoint = '/auth/login'
 
 const AuthService = {
   /*!
@@ -10,7 +10,7 @@ const AuthService = {
    * @returns {Promise}
    */
   authenticate: (data) => {
-    return ApiRequestService.post(endpoint, data)
+     return ApiRequestService.post(endpoint, data)
   }
 }
 

@@ -1,0 +1,54 @@
+.m-icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 100%;
+  transition: fill .15s linear, height .15s linear, width .15s linear;
+  width: 100%;
+
+  &--xs,
+  &--xsl,
+  &--sm,
+  &--sml,
+  &--md,
+  &--mdl,
+  &--lg,
+  &--xl {
+    @extend .m-icon;
+  }
+
+  &--xs {
+    font: {
+      size: pxToRem(12);
+    }
+  }
+
+  &--xsl {
+    font: {
+      size: pxToRem(16);
+    }
+  }
+
+  &--sm {
+    font: {
+      size: pxToRem(20);
+    }
+  }
+
+  &--sml {
+    font: {
+      size: pxToRem(24);
+    }
+  }
+
+  &--md {
+    font: {
+      size: pxToRem(28);
+    }
+  }
+
+  &--mdl {}
+
+  &--lg {}
+
+  &--xl {}
+}

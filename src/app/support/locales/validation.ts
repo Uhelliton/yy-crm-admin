@@ -1,0 +1,23 @@
+export default {
+  required: 'Campo obrigatório',
+  requiredIf: 'requiredIf',
+  requiredUnless: 'requiredUnless',
+  minLength: 'Mínimo de {min} caracteres',
+  maxLength: 'Máximo de {max} caracteres',
+  minValue: 'O valor informado é menor que o valor mínimo de {min}',
+  maxValue: 'O valor informado ultrapassa o valor máximo',
+  between: 'O valor informado ultrapassa os limites',
+  alpha: 'O valor deve ser uma letra',
+  alphaNum: 'O valor deve ser um alfa numérico',
+  numeric: 'O valor deve ser um número válido',
+  integer: 'O valor deve ser um número inteiro',
+  decimal: 'O valor deve ser um número decimal',
+  email: 'O valor informado deve ser um email válido',
+  ipAddress: 'O valor deve ser um IP válido',
+  macAddress: 'O valor deve ser um MAC address válido',
+  sameAs: 'sameAs',
+  url: 'O valor deve ser uma URL válida',
+  notFound: 'Registro não encontrado',
+  cnpj: 'O CNPJ informado é inválido',
+  cpf: 'O CPF informado é inválido'
+}

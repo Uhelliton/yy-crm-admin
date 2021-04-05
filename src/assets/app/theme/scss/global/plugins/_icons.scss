@@ -2,8 +2,12 @@
 // icons.scss
 //
 
+@import "icons/flaticon";
+
+// boxicon icon
+@import url("https://cdn.jsdelivr.net/npm/boxicons@2.0.3/css/boxicons.min.css");
+
 // @import "icons/materialdesignicons";
-@import url("https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css");
-@import "icons/boxicons";
-@import "icons/fontawesome";
-@import "icons/dripicons";
+// @import url("https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css");
+// @import "icons/fontawesome";
+// @import "icons/dripicons";
