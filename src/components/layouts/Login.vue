@@ -3,7 +3,7 @@ export default {
   name: 'Login',
   computed: {
     backgroundImage () {
-      return process.env.BUCKET_ASSETS_MEDIA_URL + '/bg/bg-3.jpg'
+      return process.env.BUCKET_URL + '/bg/bg-3.jpg'
     }
   }
 }

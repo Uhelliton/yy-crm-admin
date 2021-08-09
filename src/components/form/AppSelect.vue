@@ -68,7 +68,7 @@ export default {
     bottom: -10px;
     left: 10px;
     position: relative;
-    z-index: 4444;
+    z-index: 10;
     padding-left: pxToEm(10);
     padding-right: pxToEm(10);
 

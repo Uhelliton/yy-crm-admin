@@ -7,7 +7,7 @@ export default {
   },
   data () {
     return {
-      logoPath: process.env.BUCKET_ASSETS_MEDIA_URL + '/img/logos/'
+      logoPath: process.env.BUCKET_URL + '/img/logos/'
     }
   }
 }

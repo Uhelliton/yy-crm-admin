@@ -1,13 +1,13 @@
 export const menuItems = [
   {
     label: 'menuitems.dashboards.text',
-    icon: 'bx-line-chart',
+    icon: 'flaticon-diagram',
     prefix: 'dashboard',
     subItems: []
   },
   {
     label: 'Comunicação',
-    icon: 'bx-dollar-circle',
+    icon: 'flaticon-light',
     prefix: 'communication',
     subItems: [
       {
@@ -29,7 +29,7 @@ export const menuItems = [
   },
   {
     label: 'Painel Clientes',
-    icon: 'bx-group',
+    icon: 'flaticon-users',
     prefix: 'messenger',
     subItems: [
       {
@@ -54,39 +54,15 @@ export const menuItems = [
   },
   {
     label: 'Público',
-    icon: 'bx-id-card',
+    icon: 'flaticon-map',
     prefix: 'finance',
-    subItems: [
-      {
-        label: 'menuitems.cell.list.cell',
-        link: '/',
-        permission: ''
-      }
-    ]
+    subItems: []
   },
   {
     label: 'Relatórios',
-    icon: 'bx-id-card',
+    icon: 'flaticon-graphic',
     prefix: 'finance',
-    subItems: [
-      {
-        label: 'menuitems.cell.list.cell',
-        link: '/',
-        permission: ''
-      }
-    ]
-  },
-  {
-    label: 'Ferramentas',
-    icon: 'bx-id-card',
-    prefix: 'finance',
-    subItems: [
-      {
-        label: 'menuitems.cell.list.cell',
-        link: '/',
-        permission: ''
-      }
-    ]
+    subItems: []
   },
   {
     label: 'menuitems.setting.text',

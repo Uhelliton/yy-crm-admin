@@ -77,7 +77,7 @@ export default class DialogNewFolder extends Vue {
             lazy-rules
             :rules="[ required(), min(3) ]"
             for-id="folder" />
-          <app-button class="mt-4" type="submit" label="Criar Pasta" />
+          <app-button class="mt-4" type="submit" label="Criar" />
         </div>
       </q-form>
     </template>

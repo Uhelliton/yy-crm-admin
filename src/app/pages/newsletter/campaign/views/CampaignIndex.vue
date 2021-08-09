@@ -32,8 +32,122 @@ export default class CampaignIndex extends Vue {
       delNodeDisabled: true,
       children: [
         {
-          name: 'Email 01',
+          name: 'emana Fidelidade 01',
           id: 2,
+          isLeaf: false,
+          pid: 1,
+          children: [
+            {
+              name: 'Email Fidelidade 01',
+              id: 22,
+              isLeaf: true,
+              pid: 1
+            },
+            {
+              name: 'Email Fidelidade 01',
+              id: 22,
+              isLeaf: true,
+              pid: 1
+            }
+          ]
+        },
+        {
+          name: 'emana Fidelidade 02',
+          id: 3,
+          isLeaf: false,
+          pid: 1
+        },
+        {
+          name: 'emana Fidelidade 03',
+          id: 4,
+          isLeaf: false,
+          pid: 1
+        }
+      ]
+    },
+    {
+      name: 'Black Friday',
+      id: 1,
+      pid: 0,
+      dragDisabled: true,
+      addTreeNodeDisabled: false,
+      addLeafNodeDisabled: true,
+      editNodeDisabled: true,
+      delNodeDisabled: true,
+      children: [
+        {
+          name: 'Black Friday 01',
+          id: 23,
+          isLeaf: false,
+          pid: 1,
+          children: [
+            {
+              name: 'Black Friday 02',
+              id: 223,
+              isLeaf: true,
+              pid: 1
+            },
+            {
+              name: 'Black Friday 03',
+              id: 223,
+              isLeaf: true,
+              pid: 1
+            }
+          ]
+        },
+        {
+          name: 'Black Friday 02',
+          id: 33,
+          isLeaf: false,
+          pid: 1
+        },
+        {
+          name: 'Black Friday 03',
+          id: 43,
+          isLeaf: false,
+          pid: 1
+        }
+      ]
+    },
+    {
+      name: 'Black Summer',
+      id: 1,
+      pid: 0,
+      dragDisabled: true,
+      addTreeNodeDisabled: false,
+      addLeafNodeDisabled: true,
+      editNodeDisabled: true,
+      delNodeDisabled: true,
+      children: [
+        {
+          name: 'Black Summer 01',
+          id: 23,
+          isLeaf: false,
+          pid: 1,
+          children: [
+            {
+              name: 'Black Summer 02',
+              id: 223,
+              isLeaf: true,
+              pid: 1
+            },
+            {
+              name: 'Black Summer 03',
+              id: 223,
+              isLeaf: true,
+              pid: 1
+            }
+          ]
+        },
+        {
+          name: 'Black Summer 02',
+          id: 33,
+          isLeaf: false,
+          pid: 1
+        },
+        {
+          name: 'Black Summer 03',
+          id: 43,
           isLeaf: false,
           pid: 1
         }
@@ -102,11 +216,14 @@ export default class CampaignIndex extends Vue {
           <h4> sua seleção contém <br> 3 <br> envios</h4>
         </div>
         <div class="m-newsletter__body">
-          <div class="row">
-            <button @click="editNode" v-if="(nodesChecked && nodesChecked.length === 1)" class="btn btn-light-warning btn-block">
+          <div class="row justify-center">
+            <button @click="editNode" v-if="(nodesChecked && nodesChecked.length === 1)" class="btn btn-primary px-5">
               <i class="bx bx-plus font-size-16 mr-1"></i> Renomear
             </button>
-            <button @click="addNode" v-if="(nodesChecked && nodesChecked.length === 1)" class="btn btn-light-warning btn-block">
+            <button @click="editNode" v-if="(nodesChecked && nodesChecked.length === 1)" class="btn btn-primary px-5 mt-4">
+              <i class="bx bx-plus font-size-16 mr-1"></i> Fazer cópia
+            </button>
+            <button @click="editNode" v-if="(nodesChecked && nodesChecked.length === 1)" class="btn btn-primary px-5 mt-4">
               <i class="bx bx-plus font-size-16 mr-1"></i> Deletar
             </button>
           </div>
@@ -125,8 +242,12 @@ export default class CampaignIndex extends Vue {
             v-bind:default-expanded="false">
               <template v-slot:leafNameDisplay="slotProps">
                 <span>
-                  <input type="checkbox" :id="slotProps.model.name" @click.prevent="onClick(slotProps.model)" />
-                  <label :for="slotProps.model.name" class="ml-1" @click.prevent="onClick(slotProps.model)">{{ slotProps.model.name }}</label>
+                  <input
+                    type="checkbox"
+                    :checked="nodesChecked.find((item) => item.id === slotProps.model.id)"
+                    :id="slotProps.model.id"
+                    @click.prevent="onClick(slotProps.model)" />
+                  <label :for="slotProps.model.id" class="ml-1" @click.prevent="onClick(slotProps.model)">{{ slotProps.model.name }}</label>
                   <span hidden>#{{ slotProps.model.id }}</span>
                 </span>
               </template>
@@ -211,6 +332,12 @@ export default class CampaignIndex extends Vue {
       background: none;
     }
   }
+
+  .vtl-icon-caret-down,.vtl-icon-caret-right {
+    font-size: 16px;
+    margin-right: 5px;
+  }
+
   .icon {
     &:hover {
       cursor: pointer;

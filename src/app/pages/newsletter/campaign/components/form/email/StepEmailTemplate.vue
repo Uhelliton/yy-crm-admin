@@ -11,7 +11,7 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
     AppIcon
   }
 })
-export default class EmailCreate extends Vue {
+export default class StepEmailTemplate extends Vue {
   protected emails: Array<object> = [
     {
       id: 1,
@@ -48,8 +48,31 @@ export default class EmailCreate extends Vue {
       name: 'Email 06',
       thumb: 'https://crmstaticfiles.s3-sa-east-1.amazonaws.com/Templates_HTML/dia-dos-pais/img/thumbnail.jpg',
       link: 'https://crmstaticfiles.s3-sa-east-1.amazonaws.com/Templates_HTML/recompra-ota/recompra-ota.html'
+    },
+    {
+      id: 7,
+      name: 'Email 01',
+      thumb: 'https://crmstaticfiles.s3-sa-east-1.amazonaws.com/Templates_HTML/bem-vindo/img/thumbnail_01.jpg',
+      link: 'https://crmstaticfiles.s3-sa-east-1.amazonaws.com/Templates_HTML/recompra-ota/recompra-ota.html'
+    },
+    {
+      id: 8,
+      name: 'Email 02',
+      thumb: 'https://crmstaticfiles.s3-sa-east-1.amazonaws.com/Templates_HTML/dia-dos-namorados/img/thumbnail.jpg',
+      link: 'https://crmstaticfiles.s3-sa-east-1.amazonaws.com/Templates_HTML/recompra-ota/recompra-ota.html'
+    },
+    {
+      id: 9,
+      name: 'Email 03',
+      thumb: 'https://crmstaticfiles.s3-sa-east-1.amazonaws.com/Templates_HTML/dia-dos-pais/img/thumbnail.jpg',
+      link: 'https://crmstaticfiles.s3-sa-east-1.amazonaws.com/Templates_HTML/recompra-ota/recompra-ota.html'
     }
   ]
+
+  protected action (type: number) {
+    // 1 criar 2 visulizar
+    this.$emit('action', type)
+  }
 }
 </script>
 
@@ -62,13 +85,13 @@ export default class EmailCreate extends Vue {
             <div class="media">
               <div class="media-body">
                 <h5 class="text-muted fw-medium mb-2"  style="min-height: 40px">Personalize seu e-mail do zero</h5>
-                <button class="btn btn-light-warning">
+                <button class="btn btn-primary" @click="action(1)">
                   Criar modelo
                 </button>
               </div>
-              <div class="avatar-sm align-self-center mini-stat-icon rounded-circle bg-primary">
+              <div class="avatar-sm align-self-center mini-stat-icon rounded-circle bg-info">
               <span class="avatar-title">
-                <i class="bx bx-copy-alt font-size-24"></i>
+                <app-icon icon="mail-send" class="font-size-24" />
               </span>
               </div>
             </div>
@@ -81,7 +104,7 @@ export default class EmailCreate extends Vue {
             <div class="media">
               <div class="media-body">
                 <h5 class="text-muted fw-medium mb-2"  style="min-height: 40px">Personalize seu e-mail do zero</h5>
-                <button class="btn btn-light-warning">
+                <button class="btn btn-warning" @click="action(2)">
                   Importar
                 </button>
               </div>
@@ -94,7 +117,7 @@ export default class EmailCreate extends Vue {
           </div>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-4" v-if="1 > 15">
         <div class="card mini-stats-wid">
           <div class="card-body">
             <div class="media">
@@ -132,7 +155,7 @@ export default class EmailCreate extends Vue {
             <div class="box-content">
               <h4 class="title">{{ email.name }}</h4>
               <p class="description">Lorem ipsum dolor sit amet</p>
-              <a href="javascript:" class="btn btn-primary me-1 px-5"> Selecionar </a>
+              <button @click="action(3)" class="btn btn-primary me-1 px-5"> Selecionar </button>
               <a :href="email.link" target="_blank" class="btn btn-warning me-1 px-5 mt-4"> Visualizar </a>
             </div>
           </div>

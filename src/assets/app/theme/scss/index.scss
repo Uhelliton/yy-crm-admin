@@ -10,14 +10,7 @@ File: Main Css File
 @import "global/fonts/fonts";
 
 //Core files
-@import "../../../../../node_modules/bootstrap/scss/functions";
-@import "../../../../../node_modules/bootstrap/scss/variables";
-@import "variables";
-@import "../../../../../node_modules/bootstrap/scss/mixins";
-@import '../../../../../node_modules/bootstrap/scss/bootstrap';
 @import 'bootstrap';
-@import '../../../../../node_modules/bootstrap-vue/src/index';
-
 
 // Structure
 @import "global/structure/general";
@@ -43,43 +36,9 @@ File: Main Css File
 
 //Pages
 @import "global/pages/authentication";
-@import "global/pages/ecommerce";
-@import "global/pages/email";
-@import "global/pages/projects";
-@import "global/pages/contacts";
-@import "global/pages/timeline";
-@import "global/pages/extras-pages";
-@import "global/pages/chat";
-@import "global/pages/crypto";
-@import "global/pages/coming-soon";
 
 // Plugins
 @import "global/plugins/custom-scrollbar";
 @import "extends/component-override";
-// @import "global/plugins/calendar";
-// @import "global/plugins/dragula";
-// @import "global/plugins/range-slider";
-// @import "global/plugins/sweatalert2";
-// @import "global/plugins/select2";
-// @import "global/plugins/taskboard";
-// @import "global/plugins/datepicker";
-// @import "global/plugins/form-editors";
-// @import "global/plugins/form-upload";
-// @import "global/plugins/form-wizard";
-// @import "global/plugins/apexcharts";
-// @import "global/plugins/chartist";
-// @import "global/plugins/google-map";
-// @import "global/plugins/switcher";
-// @import "global/plugins/carousel";
 
 @import "icons";
-
-// @import "global/rtl/bootstrap-rtl";
-// @import "global/rtl/components-rtl";
-// @import "global/rtl/float-rtl";
-// @import "global/rtl/general-rtl";
-// @import "global/rtl/pages-rtl";
-// @import "global/rtl/plugins-rtl";
-// @import "global/rtl/spacing-rtl";
-// @import "global/rtl/structure-rtl";
-// @import "global/rtl/text-rtl";

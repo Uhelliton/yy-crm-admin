@@ -18,6 +18,9 @@ export default class EmailCreate extends Vue {
   protected selected: string = ''
   protected ticked: string[] = []
   protected expanded: string[] = []
+  protected selected2: string = ''
+  protected ticked2: string[] = []
+  protected expanded2: string[] = []
   protected simple: Array<object> = [
     {
       label: 'Black Friday 2020',
@@ -43,9 +46,35 @@ export default class EmailCreate extends Vue {
     }
   ]
 
+  protected simple2: Array<object> = [
+    {
+      label: 'Black Fridayy 2020',
+      children: [
+        { label: 'Boletos Pendentess' },
+        { label: 'Leads Facebook' }
+      ]
+    },
+    {
+      label: 'Black Summerr 2020',
+      disabled: false,
+      children: [
+        { label: 'Boletos Pendentess 1' },
+        { label: 'Leads Facebook 1' }
+      ]
+    },
+    {
+      label: 'Dia do Consumidorr 2021',
+      children: [
+        { label: 'Boletos Pendentess 2' },
+        { label: 'Leads Facebookk 2' }
+      ]
+    }
+  ]
+
   protected form: object = {
     folder: '',
-    select: ''
+    select: '',
+    path: '\\Teste YaaYoo\\Teste Automação'
   }
 }
 </script>
@@ -66,7 +95,7 @@ export default class EmailCreate extends Vue {
         <app-select
           v-model="form.select"
           :options="options"
-          label="Nome"
+          label="Categoria"
           placeholder="Categoria"
           lazy-rules
           :rules="[ required(), min(3) ]"
@@ -74,8 +103,8 @@ export default class EmailCreate extends Vue {
       </div>
       <div class="col-4">
         <app-input
-          v-model="form.folder"
-          label="Nome"
+          v-model="form.path"
+          label="Caminho da pasta"
           placeholder="Caminho da pasta"
           lazy-rules
           :rules="[ required(), min(3) ]"
@@ -91,7 +120,7 @@ export default class EmailCreate extends Vue {
         <q-tree
           class="m-tree"
           :nodes="simple"
-          icon="img:https://cdn.quasar.dev/logo/svg/quasar-logo.svg"
+          icon="img:statics/icons/ic-expand.svg"
           node-key="label"
           tick-strategy="leaf"
           :selected.sync="selected"
@@ -103,13 +132,13 @@ export default class EmailCreate extends Vue {
         <label>Grupos para <strong>não</strong> enviar</label>
         <q-tree
           class="m-tree"
-          :nodes="simple"
-          icon="img:https://cdn.quasar.dev/logo/svg/quasar-logo.svg"
+          :nodes="simple2"
+          icon="img:statics/icons/ic-expand.svg"
           node-key="label"
           tick-strategy="leaf"
-          :selected.sync="selected"
-          :ticked.sync="ticked"
-          :expanded.sync="expanded"
+          :selected.sync="selected2"
+          :ticked.sync="ticked2"
+          :expanded.sync="expanded2"
           default-expand-all />
       </div>
     </div>
@@ -118,12 +147,13 @@ export default class EmailCreate extends Vue {
       <div class="col-6">
         <label>Enviar</label>
         <div class="m-tree">
+          <p v-if="!ticked2.length">Nenhum grupo ou campanha selecionados para envio da ação.</p>
           <table class="table table-nowrap align-mid table-hover mb-0">
             <tbody>
-            <tr v-for="(item, index) in simple[0].children" :key="index">
+            <tr v-for="(item, index) in ticked" :key="index">
               <td style="width: 50px;"><i class="bx bx-detail"></i></td>
               <td>
-                <h5 class="text-truncate font-size-14 mb-1">{{  item.label }} </h5>
+                <h5 class="text-truncate font-size-14 mb-1">{{  item }} </h5>
               </td>
               <td style="width: 90px;">
                 <div>
@@ -140,12 +170,13 @@ export default class EmailCreate extends Vue {
       <div class="col-6">
         <label>Não enviar</label>
         <div class="m-tree">
+          <p v-if="!ticked2.length">Nenhum grupo ou campanha selecionados para <b>não</b> envio da ação.</p>
           <table class="table table-nowrap align-mid table-hover mb-0">
             <tbody>
-            <tr v-for="(item, index) in simple[2].children" :key="index">
+            <tr v-for="(item, index) in ticked2" :key="index">
               <td style="width: 50px;"><i class="bx bx-detail"></i></td>
               <td>
-                <h5 class="text-truncate font-size-14 mb-1">{{  item.label }} </h5>
+                <h5 class="text-truncate font-size-14 mb-1">{{  item }} </h5>
               </td>
               <td style="width: 90px;">
                 <div>
@@ -198,6 +229,13 @@ export default class EmailCreate extends Vue {
       border-left: 1px solid currentColor;
       border-bottom: 1px solid currentColor;
     }
+  }
+
+  .q-tree__arrow--rotate {
+    transform: rotate3d(0, 0, 1,
+      270deg
+    );
+    fill: #466af0;
   }
 
   :after {

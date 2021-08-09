@@ -1,10 +1,11 @@
 import { SessionStorage, LocalStorage } from 'quasar'
 
-const sessionUserPrefix = 'user'
+const sessionUserPrefix = 'yy_crm_user'
+
 const UserStorage = {
   store: (data) => {
-    SessionStorage.set('user', JSON.stringify(data))
-    LocalStorage.set('app_version', process.env.PACKAGE_VERSION)
+    SessionStorage.set(sessionUserPrefix, JSON.stringify(data))
+    LocalStorage.set('yy_crm_app_version', process.env.PACKAGE_VERSION)
   },
 
   getUser: () => {

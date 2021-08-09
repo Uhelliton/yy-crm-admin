@@ -2,7 +2,7 @@ import Page404 from 'src/app/support/common/pages/error/Error404'
 const routes = [
   {
     path: '/dashboard',
-    component: () => import('src/app/units/panel/dashboard/views/Dashboard'),
+    component: () => import('src/app/pages/panel/dashboard/views/Dashboard'),
     name: 'dashboard.index',
     meta: {
       requiresAuth: true,
