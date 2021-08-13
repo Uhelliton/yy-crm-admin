@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Component, Watch, Vue } from 'vue-property-decorator'
-import Admin from 'src/components/layouts/Admin'
-import Login from 'src/components/layouts/Login'
+import Admin from 'src/app/presentation/components/layouts/Admin'
+import Login from 'src/app/presentation/components/layouts/Login'
 import { Route } from 'vue-router'
 
 @Component({
