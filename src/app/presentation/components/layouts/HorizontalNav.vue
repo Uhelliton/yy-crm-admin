@@ -91,7 +91,7 @@ export default {
 </script>
 <template>
   <div class="topnav">
-    <div class="container-fluid">
+    <div class="container-fluid px-3">
       <nav class="navbar navbar-light navbar-expand-lg topnav-menu active">
         <div class="collapse navbar-collapse active" id="topnav-menu-content">
           <ul class="navbar-nav">

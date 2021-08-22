@@ -1,7 +1,7 @@
-import http from 'src/app/infra/http'
+import http from 'src/app/infra/plugins/http'
 import qs from 'qs'
 
-export class HttpService {
+export class AxiosHttpAdapter {
   protected get (uriPath: string, params: object = {}) : Promise<any> {
     return http.get(uriPath, { params: params }).then(response => response)
   }

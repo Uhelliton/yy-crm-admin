@@ -1,6 +1,6 @@
-import { HttpService } from 'src/app/main/services/http.service'
+import { AxiosHttpAdapter } from 'src/app/main/adapters/axios-http.adapter'
 
-export class HttpRestService extends HttpService {
+export class HttpRestService extends AxiosHttpAdapter {
   protected resource: string = ''
   protected fieldId: string = 'id'
 

@@ -42,7 +42,7 @@ export default class Admin extends Vue {
         <!-- ============================================================== -->
         <div class='main-content'>
           <div class='page-content'>
-            <div class='container-fluid'>
+            <div class='container-fluid px-2'>
               <page-header></page-header>
               <div id='q-app'>
                 <transition name=''>

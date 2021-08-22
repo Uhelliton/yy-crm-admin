@@ -10,7 +10,8 @@
     color: $footer-color;
     left: 250px;
     height: $footer-height;
-    background-color: $footer-bg;
+    background-color: $white;
+    // box-shadow: -2px -8px 20px -14px #dedede;
 }
 
 @media (max-width: 992px) {

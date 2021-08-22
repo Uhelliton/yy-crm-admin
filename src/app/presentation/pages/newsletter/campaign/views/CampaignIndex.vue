@@ -5,7 +5,8 @@ import DialogCampaignOptions from '../components/DialogCampaignOptions.vue'
 import DialogNewFolder from '../components/DialogNewFolder.vue'
 import { AppIcon, AppCard } from 'src/app/presentation/components'
 import { uid } from 'src/app/infra/utils/helpers'
-import { find } from 'src/app/infra/collections/index'
+import { find } from 'src/app/infra/plugins/collections/index'
+import { ConvertModelToTreeFormat } from 'src/app/domains/campaign/usercases/campaign-usecase'
 
 @Component({
   components: {
@@ -20,140 +21,12 @@ export default class CampaignIndex extends Vue {
   public token: object = { folderCreate: '', campaignActions: '' }
   protected nodesChecked: Array<object> = []
   protected nodeSelected: object = {}
-  public data: any = new Tree([
-    {
-      name: 'Semana Fidelidade',
-      id: 1,
-      pid: 0,
-      dragDisabled: true,
-      addTreeNodeDisabled: false,
-      addLeafNodeDisabled: true,
-      editNodeDisabled: true,
-      delNodeDisabled: true,
-      children: [
-        {
-          name: 'emana Fidelidade 01',
-          id: 2,
-          isLeaf: false,
-          pid: 1,
-          children: [
-            {
-              name: 'Email Fidelidade 01',
-              id: 22,
-              isLeaf: true,
-              pid: 1
-            },
-            {
-              name: 'Email Fidelidade 01',
-              id: 22,
-              isLeaf: true,
-              pid: 1
-            }
-          ]
-        },
-        {
-          name: 'emana Fidelidade 02',
-          id: 3,
-          isLeaf: false,
-          pid: 1
-        },
-        {
-          name: 'emana Fidelidade 03',
-          id: 4,
-          isLeaf: false,
-          pid: 1
-        }
-      ]
-    },
-    {
-      name: 'Black Friday',
-      id: 1,
-      pid: 0,
-      dragDisabled: true,
-      addTreeNodeDisabled: false,
-      addLeafNodeDisabled: true,
-      editNodeDisabled: true,
-      delNodeDisabled: true,
-      children: [
-        {
-          name: 'Black Friday 01',
-          id: 23,
-          isLeaf: false,
-          pid: 1,
-          children: [
-            {
-              name: 'Black Friday 02',
-              id: 223,
-              isLeaf: true,
-              pid: 1
-            },
-            {
-              name: 'Black Friday 03',
-              id: 223,
-              isLeaf: true,
-              pid: 1
-            }
-          ]
-        },
-        {
-          name: 'Black Friday 02',
-          id: 33,
-          isLeaf: false,
-          pid: 1
-        },
-        {
-          name: 'Black Friday 03',
-          id: 43,
-          isLeaf: false,
-          pid: 1
-        }
-      ]
-    },
-    {
-      name: 'Black Summer',
-      id: 1,
-      pid: 0,
-      dragDisabled: true,
-      addTreeNodeDisabled: false,
-      addLeafNodeDisabled: true,
-      editNodeDisabled: true,
-      delNodeDisabled: true,
-      children: [
-        {
-          name: 'Black Summer 01',
-          id: 23,
-          isLeaf: false,
-          pid: 1,
-          children: [
-            {
-              name: 'Black Summer 02',
-              id: 223,
-              isLeaf: true,
-              pid: 1
-            },
-            {
-              name: 'Black Summer 03',
-              id: 223,
-              isLeaf: true,
-              pid: 1
-            }
-          ]
-        },
-        {
-          name: 'Black Summer 02',
-          id: 33,
-          isLeaf: false,
-          pid: 1
-        },
-        {
-          name: 'Black Summer 03',
-          id: 43,
-          isLeaf: false,
-          pid: 1
-        }
-      ]
-    }
-  ])
+  public data: Tree[] = []
+
+  async mounted () {
+    const campaign = await ConvertModelToTreeFormat
+    this.data = new Tree(campaign)
+  }
 
   onClick (node: object) {
     const nodeChecked = find(this.nodesChecked, { id: node.id })
@@ -232,14 +105,13 @@ export default class CampaignIndex extends Vue {
     </div>
 
     <div class="col-10">
-      <app-card title="Listagem de Campanhas">
+      <AppCard title="Campanhas pontuais">
         <template #content>
-          <vue-tree-list
-            class="m-tree__list"
-            :model="data"
-            default-tree-node-name="Nova Campanha"
-            default-leaf-node-name="Novo Email"
-            v-bind:default-expanded="false">
+          <VueTreeList class="m-tree__list"
+                      :model="data"
+                      default-tree-node-name="Nova Campanha"
+                      default-leaf-node-name="Novo Email"
+                      v-bind:default-expanded="false">
               <template v-slot:leafNameDisplay="slotProps">
                 <span>
                   <input
@@ -266,19 +138,19 @@ export default class CampaignIndex extends Vue {
               <span class="icon" slot="treeNodeIcon" >
                   <app-icon icon="flaticon-folder-1 mr-2" class="m-icon--sm" />
               </span>
-          </vue-tree-list>
+          </VueTreeList>
           <button @click="addNode" class="btn btn-default-primary mb-2 mr-2">
             <i class="bx bx-plus font-size-16 mr-1"></i> Criar nova pasta
           </button>
         </template>
-      </app-card>
+      </AppCard>
     </div>
     <dialog-campaign-options
       :dialog-token="token.campaignActions"
       :node="nodeSelected"
       @select="onListenerSelectedOption"/>
 
-    <dialog-new-folder
+    <DialogNewFolder
       :dialog-token="token.folderCreate"
       :node="nodeSelected"
       @submit="onListenerFolderCreate"  />

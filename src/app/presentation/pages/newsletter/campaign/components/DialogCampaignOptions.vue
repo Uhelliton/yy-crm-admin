@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Component, Prop, Watch, Vue } from 'vue-property-decorator'
 import { AppDialog, AppIcon } from 'src/app/presentation/components'
-import { find } from 'src/app/infra/collections/index'
+import { find } from 'src/app/infra/plugins/collections/index'
 
 @Component({
   components: {

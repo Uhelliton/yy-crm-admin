@@ -2,7 +2,7 @@ import Page404 from 'src/app/presentation/pages/error/Error404.vue'
 const routes = [
   {
     path: '/dashboard',
-    component: () => import('src/app/presentation/pages/panel/dashboard/views/Dashboard.vue'),
+    component: () => import('src/app/presentation/pages/dashboard/views/Dashboard.vue'),
     name: 'dashboard.index',
     meta: {
       requiresAuth: true,

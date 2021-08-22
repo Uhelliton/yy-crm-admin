@@ -26,17 +26,17 @@ export default class Dashboard extends Vue {
 
 <template>
   <div>
-    <div class="row">
+    <div class="row q-col-gutter-md">
       <div class="col-xl-8">
-        <div class="row">
-          <div class="col-sm-6">
+        <div class="row q-col-gutter-xs-none q-col-gutter-md">
+          <div class="col-xs-12 col-md-6">
             <div class="card">
               <div class="card-body">
                 <p class="text-muted mb-4">
                   <i class="bx bx-mail-send h2 text-primary align-middle mb-0 mr-3"></i> Total de destinatários impactados
                 </p>
 
-                <div class="row">
+                <div class="row q-col-gutter-xs-none q-col-gutter-md">
                   <div class="col-6">
                     <div>
                       <h5>1.098.525</h5>
@@ -110,7 +110,7 @@ export default class Dashboard extends Vue {
           </div>
         </div>
         <div class="row">
-          <div class="col-xl-12">
+          <div class="col-xs-12 col-xl-12">
             <div class="card">
               <div class="card-body">
                 <div class="clearfix">
@@ -162,7 +162,7 @@ export default class Dashboard extends Vue {
           </div>
         </div>
       </div>
-      <div class="col-xl-4">
+      <div class="col-xs-12 col-xl-4">
         <div class="card">
           <div class="card-body pb-0">
             <div class="clearfix">
