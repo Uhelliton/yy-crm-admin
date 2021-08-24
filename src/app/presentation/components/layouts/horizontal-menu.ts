@@ -3,6 +3,7 @@ export const menuItems = [
     label: 'menuitems.dashboards.text',
     icon: 'flaticon-diagram',
     prefix: 'dashboard',
+    route: 'dashboard.index',
     subItems: []
   },
   {
@@ -55,8 +56,17 @@ export const menuItems = [
   {
     label: 'Público',
     icon: 'flaticon-map',
-    prefix: 'finance',
-    subItems: []
+    prefix: 'public',
+    subItems: [
+      {
+        label: 'Dashboard',
+        route: 'public.dashboard',
+      },
+      {
+        label: 'Públicos',
+        route: 'public.index',
+      },
+    ]
   },
   {
     label: 'Relatórios',

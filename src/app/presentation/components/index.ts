@@ -1,7 +1,8 @@
 import { AppInput, AppSelect, AppButton }  from './form'
-import AppIcon  from './icon/Icon.vue'
-import AppCard  from './card/Card.vue'
-import AppDialog  from './dialog/AppDialog.vue'
+import AppIcon  from './icon/Icon'
+import AppCard  from './card/Card'
+import AppDialog  from './dialog/AppDialog'
+import AppTable  from './table/AppTable'
 
 export {
   AppInput,
@@ -9,5 +10,6 @@ export {
   AppButton,
   AppIcon,
   AppCard,
-  AppDialog
+  AppDialog,
+  AppTable
 }

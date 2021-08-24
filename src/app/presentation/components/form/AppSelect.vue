@@ -55,22 +55,39 @@ export default {
 @import '../../styles/app/theme/scss/global/utilities/all';
 
 .m-select {
+  .material-icons {
+    display: none;
+  }
+  &.m-select__page{
+    &:not(.q-field--dense) {
+      .q-field__inner {
+        .q-field__control {
+          height: 40px!important;
+        }
+      }
+    }
+
+    .q-field--outlined .q-field__control:before {
+      height: 40px!important;
+    }
+  }
+
   &:not(.q-field--dense) {
     .q-field__inner {
       .q-field__control {
-        // height: calc(2em + .90rem + 6px)!important;
+        height: 50px;
       }
     }
   }
 
+  .q-field--outlined .q-field__control:before {
+    height: 50px;
+    border: 1px solid #abacb3;
+  }
+
   &__label {
     background: white;
-    bottom: -10px;
-    left: 10px;
     position: relative;
-    z-index: 10;
-    padding-left: pxToEm(10);
-    padding-right: pxToEm(10);
 
     &_ {
       align-items: center;
@@ -83,20 +100,19 @@ export default {
   }
 
   .q-field__native {
-    width: 100%;
-    padding-left: pxToEm(10);
-    padding-top: pxToEm(10);
-    font-weight: 400;
-    color: #495057;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-position: right .75rem center;
-    background-size: 16px 12px;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    /* font-weight: 400;
+     color: #495057;
+     background-color: #fff;
+     background-repeat: no-repeat;
+     background-position: right .75rem center;
+     background-size: 16px 12px;
+     border-right: 1px solid #ced4da;
+     border-top: 1px solid #ced4da;
+     border-bottom: 1px solid #ced4da;
+     border-radius: .25rem;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;*/
   }
 
 }

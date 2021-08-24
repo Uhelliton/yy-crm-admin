@@ -100,8 +100,7 @@ export default {
             <li class="nav-item dropdown" v-for="(item, index) of menuItems" :key="index">
               <a
                 class="nav-link dropdown-toggle arrow-none"
-                @click="onMenuClick"
-                href="javascript: void(0);"
+                @click="hasItems(item) ? onMenuClick : $router.push({ name: item.route })"
                 id="topnav-components"
                 role="button"
               >
@@ -112,8 +111,7 @@ export default {
               <div
                 class="dropdown-menu row"
                 aria-labelledby="topnav-dashboard"
-                v-if="hasItems(item)"
-              >
+                v-if="hasItems(item)">
                 <span v-for="(subitem, index) of item.subItems" :key="index">
                   <router-link
                     class="col dropdown-item side-nav-link-ref"
