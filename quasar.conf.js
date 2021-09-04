@@ -13,16 +13,16 @@ module.exports = function (ctx) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/cli-documentation/boot-files
     boot: [
-      'axios',
-      'theme-ui',
-      'permission',
-      'filters',
-      'i18n'
+      '~src/app/main/boot/prototype',
+      '~src/app/main/boot/theme-ui',
+      '~src/app/main/boot/filters',
+      '~src/app/main/boot/i18n',
+      '~src/app/main/boot/server',
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
-      'app.sass'
+      // './app/presentation/styles/themes/scss/app.sass'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -124,6 +124,18 @@ module.exports = function (ctx) {
           API_URL: JSON.stringify('https://pesquisa-eleitoral-api-prod.yaayoo.com.br'),
           PACKAGE_VERSION: '"' + version + '"'
         }
+    },
+
+    // default values:
+    sourceFiles: {
+      rootComponent: 'src/App.vue',
+      router: 'src/app/main/routes',
+      store: 'src/app/main/store',
+      indexHtmlTemplate: 'src/index.template.html',
+      registerServiceWorker: 'src-pwa/register-service-worker.js',
+      serviceWorker: 'src-pwa/custom-service-worker.js',
+      electronMain: 'src-electron/electron-main.js',
+      electronPreload: 'src-electron/electron-preload.js'
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
