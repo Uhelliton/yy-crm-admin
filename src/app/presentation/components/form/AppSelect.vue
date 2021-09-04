@@ -32,6 +32,7 @@
 
 <script>
 import Icon from '../icon/Icon'
+
 export default {
   name: 'AppSelect',
   components: { Icon },

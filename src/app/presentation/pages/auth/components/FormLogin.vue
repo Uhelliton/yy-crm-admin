@@ -1,7 +1,5 @@
 <script>
 import { mapActions } from 'vuex'
-import NotifyMessage from 'src/app/infra/utils/notify'
-import Preload from 'src/app/infra/utils/preload'
 import AppInput from 'src/app/presentation/components/form/AppInput'
 
 export default {
@@ -9,17 +7,8 @@ export default {
   data () {
     return {
       form: {
-        email: '',
-        password: ''
-      },
-      rules: {
-        email: [
-          { required: true, message: 'Por favor insira seu email', trigger: 'blur' },
-          { type: 'email', message: 'Por favor insira um email válido', trigger: ['blur', 'change'] }
-        ],
-        password: [
-          { required: true, message: 'Por favor insira sua senha', trigger: 'blur' }
-        ]
+        email: 'email@teste.com',
+        password: 'crm'
       }
     }
   },
@@ -28,20 +17,20 @@ export default {
     onAuthenticate () {
       this.$refs.form.validate().then(async (valid) => {
         if (valid) {
-          Preload.show()
+          this.$preload.show()
 
           this.attemptLogin({ ...this.form })
             .then(response => {
-              Preload.hide()
+              this.$preload.hide()
 
               if (Object.keys(response).includes('token')) {
                 this.$router.push({ name: 'dashboard.index' })
               } else {
-                NotifyMessage.warning('Ops! Error ao logar')
+                this.$notify.warning('Ops! Error ao logar')
               }
             })
             .catch(error => {
-              NotifyMessage.error(error)
+              this.$notify.error(error)
             })
         }
       })

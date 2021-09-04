@@ -18,20 +18,20 @@ import { ConvertModelToTreeFormat } from 'src/app/domains/campaign/usercases/cam
   }
 })
 export default class CampaignIndex extends Vue {
-  public token: object = { folderCreate: '', campaignActions: '' }
+  public token: { folderCreate: string, campaignActions: string } = { folderCreate: '', campaignActions: '' }
   protected nodesChecked: Array<object> = []
-  protected nodeSelected: object = {}
-  public data: Tree[] = []
+  protected nodeSelected: any = {}
+  public data: any = []
 
   async mounted () {
     const campaign = await ConvertModelToTreeFormat
     this.data = new Tree(campaign)
   }
 
-  onClick (node: object) {
-    const nodeChecked = find(this.nodesChecked, { id: node.id })
+  onClick (node: any) {
+    const nodeChecked: any = find(this.nodesChecked, { id: node.id })
     if (nodeChecked) {
-      this.nodesChecked = this.nodesChecked.filter(item => item.id !== nodeChecked.id)
+      this.nodesChecked = this.nodesChecked.filter((item: any) => item.id !== nodeChecked.id)
       return false
     }
 
@@ -68,7 +68,7 @@ export default class CampaignIndex extends Vue {
     }
   }
 
-  protected onListenerSelectedOption (action: object) {
+  protected onListenerSelectedOption (action: any|object) {
     switch (action.id) {
       case 1:
         this.token.folderCreate = uid()

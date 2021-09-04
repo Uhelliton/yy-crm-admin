@@ -8,7 +8,7 @@ class ConvertModelToTreeFormatUseCase {
   public async execute(): Promise<ITreeModel[]> {
     const campaigns: CampaignModel[] = await CampaignService.all()
 
-    return map(campaigns, (campaign: CampaignModel) => {
+    return map(campaigns, (campaign: CampaignModel|any) => {
       return {
         id: campaign.id,
         pid: campaign.id,

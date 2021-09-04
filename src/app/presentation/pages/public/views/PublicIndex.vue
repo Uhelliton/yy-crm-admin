@@ -40,6 +40,7 @@ export default class PublicIndex extends Vue {
         this.dataTable.rows = data
       }
     } catch (err) {
+      // @ts-ignore
       this.$notify.error(err)
     } finally {
       this.dataTable.loading = false
@@ -64,7 +65,7 @@ export default class PublicIndex extends Vue {
               <q-menu class="m-dropdownMenu">
                 <ul class="m-dropdownMenu__menuList">
                   <li class="m-dropdownMenu__item">
-                    Editar {{ props.row.id}}
+                    Editar {{ props.row.id }}
                   </li>
                 </ul>
               </q-menu>

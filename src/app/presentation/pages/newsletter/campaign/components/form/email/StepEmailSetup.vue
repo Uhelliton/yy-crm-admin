@@ -31,12 +31,13 @@ export default class StepEmailSetup extends Vue {
 
   editorLoaded () {
     // Pass the template JSON here
+    const emailEditor: any = this.$refs.emailEditor
     if (this.type === 2) {
-      this.$refs.emailEditor.editor.loadDesign(mockx)
+      emailEditor.editor.loadDesign(mockx)
     }
 
     if (this.type === 3) {
-      this.$refs.emailEditor.editor.loadDesign({
+      emailEditor.editor.loadDesign({
         html: mock,
         classic: true
       })
@@ -44,16 +45,18 @@ export default class StepEmailSetup extends Vue {
   }
 
   saveDesign () {
-    this.$refs.emailEditor.editor.saveDesign(
-      (design) => {
+    const emailEditor: any = this.$refs.emailEditor
+    emailEditor.editor.saveDesign(
+      (design: boolean) => {
         console.log('saveDesign', design)
       }
     )
   }
 
   exportHtml () {
-    this.$refs.emailEditor.editor.exportHtml(
-      (data) => {
+    const emailEditor: any = this.$refs.emailEditor
+    emailEditor.editor.exportHtml(
+      (data: object) => {
         console.log('exportHtml', data)
       }
     )

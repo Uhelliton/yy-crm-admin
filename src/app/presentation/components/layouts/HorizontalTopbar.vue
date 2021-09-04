@@ -195,7 +195,7 @@ export default {
             <a href="javascript: void(0);" class="text-reset notification-item">
               <div class="media">
                 <img
-                  src="statics/media/images/users/avatar-7.jpg"
+                  src="src/app/presentation/statics/media/images/users/avatar-7.jpg"
                   class="mr-3 rounded-circle avatar-xs"
                   alt="user-pic"
                 />
@@ -233,7 +233,7 @@ export default {
             <a href="javascript: void(0);" class="text-reset notification-item">
               <div class="media">
                 <img
-                  src="statics/media/images/users/avatar-4.jpg"
+                  src="~src/app/presentation/statics/media/images/users/avatar-4.jpg"
                   class="mr-3 rounded-circle avatar-xs"
                   alt="user-pic"
                 />
@@ -262,7 +262,7 @@ export default {
           <template v-slot:button-content>
             <img
               class="rounded-circle header-profile-user"
-              src="statics/media/images/users/avatar-7.jpg"
+              src="~src/app/presentation/statics/media/images/users/avatar-7.jpg"
               alt="Header Avatar"
             />
             <span class="d-none d-xl-inline-block ml-1">Uhelliton</span>

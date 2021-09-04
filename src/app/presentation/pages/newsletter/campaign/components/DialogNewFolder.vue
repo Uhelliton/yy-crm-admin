@@ -17,7 +17,7 @@ import { required, min } from 'src/app/infra/utils/rules'
 })
 export default class DialogNewFolder extends Vue {
   protected dialogRef: boolean = false
-  protected form: object = {
+  protected form: any = {
     folder: ''
   }
 
@@ -31,7 +31,7 @@ export default class DialogNewFolder extends Vue {
   }
 
   @Prop({ required: false, type: String }) readonly dialogToken!: string
-  @Prop({ required: false, type: Object, default: {} }) readonly node!: object
+  @Prop({ required: false, type: Object, default: {} }) readonly node!: object|any
 
   protected onListenerDialogClose () {
     this.dialogRef = false
@@ -40,7 +40,7 @@ export default class DialogNewFolder extends Vue {
 
   protected handleFormSubmit () {
     const form: any = this.$refs.form
-    form.validate().then(async (success) => {
+    form.validate().then(async (success: boolean) => {
       if (success) {
         this.$emit('submit', { form: this.form, node: this.node })
         this.form.folder = ''
